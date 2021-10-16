@@ -1,0 +1,72 @@
+<div class="card-item d-flex justify-content-center"
+     *ngIf="!isReversed"
+>
+  <div class="card-item__bg d-block position-relative">
+    <img class="img__bg" src="../assets/card.jpeg" alt="Фоновое изображение карты">
+  </div>
+
+  <div class="card-item__top d-flex position-absolute">
+    <div class="card-item__chip">
+      <img class="img__chip" src="../assets/chip.png" alt="Изображение чипа карты">
+    </div>
+
+    <img class="img__type" src="../assets/visa.png" alt="Изображение типа карты">
+  </div>
+
+  <div class="card-item__number d-flex position-absolute">
+    <ng-container *ngFor="let item of cardNumberItems">
+      <div class="card-item__numberItem">
+        <span *ngIf="cardValue && cardValue.number ? !cardValue.number[item] && item !== -1 : item !== -1">#</span>
+
+        <span *ngIf="cardValue && cardValue.number">{{ cardValue.number[item] }}</span>
+
+        <div [class.card-item__empty]="item === -1"></div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="card-item__infoMain position-absolute">
+    <div class="card-item__info d-flex justify-content-between">
+
+      <div>
+        <div class="card-item__holder"><span>Card Holder</span></div>
+        <div class="card-item__holderName text-uppercase"><span *ngIf="!cardValue?.holder">FULL NAME</span>{{ cardValue?.holder }}</div>
+      </div>
+
+      <div>
+        <div class="card-item__exp"><span>Expires</span></div>
+        <div class="card-item__monthYear">
+          <span *ngIf="!cardValue?.month">MM</span>
+          <span>{{ cardValue?.month }}</span>
+          /
+          <span *ngIf="!cardValue?.year">YY</span>
+          <span>{{ cardValue?.year }}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="card-item__rev d-flex justify-content-center"
+     *ngIf="isReversed"
+>
+  <div class="card-item__revBg d-block position-relative">
+    <img class="img__bg" src="../assets/card.jpeg" alt="Фоновое изображение карты">
+  </div>
+
+  <div class="card-item__check position-absolute"></div>
+
+  <div class="card-item__place position-absolute">
+    <div class="card-item__value d-flex flex-column position-absolute">
+      <label class="card-itemLabel__cvv" for="card__cvv">CVV</label>
+      <span id="card__cvv" class="card-item__cvv">{{ cardValue?.cvv }}</span>
+    </div>
+  </div>
+
+  <div class="card-item__revType d-flex position-absolute justify-content-end">
+    <div class="card-item__typeImg">
+      <img class="img__type" src="../assets/visa.png" alt="Изображение типа карты">
+    </div>
+  </div>
+</div>

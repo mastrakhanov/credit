@@ -1,0 +1,114 @@
+<div class="bgc">
+  <div class="card-form d-block overflow-hidden p-1 mx-auto my-0">
+    <form [formGroup]="cardForm" (ngSubmit)="submit()">
+      <div class="col-md-12 mb-3"
+           [ngClass]="{ invalid: cardForm.get('cardNumber')?.touched && cardForm.get('cardNumber')?.invalid }"
+      >
+        <label class="card-label__number" for="validationTooltip01">
+          Card Number<span>*</span>
+        </label>
+
+        <input class="form-control"
+               type="text"
+               appCredit
+               [regexPattern]="'^[0-9]*$'"
+               maxlength="19"
+               onkeypress="value = value.replace(/(\d{4})(?=(\d|$))/g, '$1 ').slice(0, 19)"
+               id="validationTooltip01"
+               formControlName="cardNumber"
+        >
+
+          <div *ngIf="cardForm.get('cardNumber')?.touched && cardForm.get('cardNumber')?.invalid">
+            <small class="card-form__valid" *ngIf="cardForm.get('cardNumber')?.errors?.required">
+              Введите номер карты
+            </small>
+
+            <small class="card-form__valid" *ngIf="cardForm.get('cardNumber')?.errors?.minlength">
+              Введите {{ cardForm.get('cardNumber')?.errors?.minlength.requiredLength - 3 }} значный номер карты
+            </small>
+          </div>
+      </div>
+      <div class="col-md-12 mb-3"
+           [ngClass]="{ invalid: cardForm.get('cardHolder')?.touched && cardForm.get('cardHolder')?.invalid }"
+      >
+        <label class="card-label__holder" for="validationTooltip02">
+          Card Holders<span>*</span>
+        </label>
+
+        <input class="form-control text-uppercase"
+               type="text"
+               appCredit
+               [regexPattern]="'^[A-Z, a-z]*$'"
+               id="validationTooltip02"
+               formControlName="cardHolder"
+        >
+
+          <div *ngIf="cardForm.get('cardHolder')?.touched && cardForm.get('cardHolder')?.invalid">
+            <small class="card-form__valid" *ngIf="cardForm.get('cardHolder')?.errors?.required">
+              Введите владельца карты
+            </small>
+          </div>
+      </div>
+      <div class="d-flex justify-content-between flex-wrap">
+        <div class="form-exp__date d-flex justify-content-between">
+          <div class="mb-3 me-3"
+               [ngClass]="{ invalid: cardForm.get('month')?.touched && cardForm.get('month')?.invalid }"
+          >
+            <label class="card-label__month" for="validationTooltip03">Month<span>*</span></label>
+
+            <select class="form-select" id="validationTooltip03" formControlName="month">
+              <option></option>
+              <option *ngFor="let month of months" [value]="month + 1">{{ month + 1 }}</option>
+            </select>
+          </div>
+
+          <div class="mb-3 me-3"
+               [ngClass]="{ invalid: cardForm.get('year')?.touched && cardForm.get('year')?.invalid }"
+          >
+            <label class="card-label__year" for="validationTooltip04">Year<span>*</span></label>
+
+            <select class="form-select" id="validationTooltip04" formControlName="year">
+              <option></option>
+              <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3"
+             [ngClass]="{ invalid: cardForm.get('cvv')?.touched && cardForm.get('cvv')?.invalid }"
+        >
+          <label class="card-label__cvv" for="validationTooltip05">
+            CVV<span>*</span>
+          </label>
+
+          <input class="form-control"
+                 type="text"
+                 appCredit
+                 [regexPattern]="'^[0-9]*$'"
+                 maxlength="3"
+                 id="validationTooltip05"
+                 formControlName="cvv"
+                 (click)="onReverse()"
+                 (blur)="onReverseBack()"
+          >
+
+          <div *ngIf="cardForm.get('cvv')?.touched && cardForm.get('cvv')?.invalid">
+            <small class="card-form__valid" *ngIf="cardForm.get('cvv')?.errors?.required">
+              Введите CVV
+            </small>
+
+            <small class="card-form__valid" *ngIf="cardForm.get('cvv')?.errors?.minlength">
+              Введите корректный CVV
+            </small>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary w-100 mt-3 mb-4"
+              type="submit"
+              [disabled]="cardForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

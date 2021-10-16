@@ -1,0 +1,12 @@
+.wrapper {
+  background-color: #ddeefc;
+  min-height: 100vh;
+  padding: 50px 15px;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 20px 10px;
+  }
+}

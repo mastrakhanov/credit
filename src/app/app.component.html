@@ -1,1 +1,9 @@
-<app-credit></app-credit>
+<div class="wrapper overflow-hidden">
+  <app-credit-card [cardValue]="cardValue"
+                   [isReversed]="isReversed"
+  ></app-credit-card>
+
+  <app-credit-form (cardValueChange)="changeCardValue($event)"
+                   (isReversedChange)="changeIsReversed($event)"
+  ></app-credit-form>
+</div>

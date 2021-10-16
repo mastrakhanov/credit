@@ -1,0 +1,398 @@
+.card-item {
+  z-index: 99;
+
+  & .card-item__bg {
+    max-width: 430px;
+
+    & .img__bg {
+      max-width: 430px;
+      border-radius: 20px;
+      filter: brightness(0.7);
+    }
+  }
+
+  & .card-item__top {
+    margin-top: 20px;
+
+    & .card-item__chip {
+      margin-right: 250px;
+
+      & .img__chip {
+        height: 45px;
+      }
+    }
+
+    & .img__type {
+      height: 45px;
+    }
+  }
+
+  & .card-item__number {
+    margin-top: 113px;
+    color: #ffffff;
+    font-size: 25px;
+
+    & .card-item__numberItem {
+      margin-left: 3px;
+    }
+
+    & .card-item__empty {
+      width: 30px;
+    }
+  }
+
+  & .card-item__infoMain {
+    top: 260px;
+
+    & .card-item__info {
+      width: 370px;
+      font-size: 16px;
+
+      & .card-item__holder {
+        color: #fff;
+        opacity: 0.6;
+      }
+
+      & .card-item__holderName {
+        color: #fff;
+      }
+
+      & .card-item__exp {
+        color: #fff;
+        opacity: 0.6;
+      }
+
+      & .card-item__monthYear {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.card-item__rev {
+  z-index: 99;
+
+  & .card-item__revBg {
+    max-width: 430px;
+
+    & .img__bg {
+      max-width: 430px;
+      border-radius: 20px;
+      filter: brightness(0.7);
+    }
+  }
+
+  & .card-item__check {
+    height: 55px;
+    width: 430px;
+    background-color: black;
+    margin-top: 30px;
+  }
+
+  & .card-item__place {
+    background-color: white;
+    height: 50px;
+    width: 390px;
+    border-radius: 5px;
+    margin-top: 120px;
+
+    & .card-item__value {
+      margin-top: -22px;
+      left: 355px;
+
+      & .card-itemLabel__cvv {
+        color: white;
+      }
+
+      & .card-item__cvv {
+        margin-top: 18px;
+        color: black;
+      }
+    }
+  }
+
+  & .card-item__revType {
+    width: 390px;
+    margin-top: 210px;
+
+    & .img__type {
+      height: 45px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-item {
+
+    & .card-item__bg {
+      max-width: 370px;
+      max-height: 232px;
+
+      & .img__bg {
+        max-width: 370px;
+        max-height: 232px;
+        border-radius: 15px;
+      }
+    }
+
+    & .card-item__top {
+
+      & .card-item__chip {
+        margin-right: 220px !important;
+
+        & .img__chip {
+          max-height: 30px;
+        }
+      }
+
+      & .img__type {
+        max-height: 30px;
+      }
+    }
+
+    & .card-item__number {
+      top: 5px;
+
+      & .card-item__numberItem {
+        font-size: 20px;
+      }
+
+      & .card-item__empty {
+        width: 25px;
+      }
+    }
+
+    & .card-item__infoMain {
+      top: 190px!important;
+
+      & .card-item__info {
+        width: 300px !important;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .card-item__rev {
+
+    & .card-item__revBg {
+      max-width: 360px;
+
+      & .img__bg {
+        max-width: 360px;
+        border-radius: 15px;
+      }
+    }
+
+    & .card-item__check {
+      height: 35px;
+      width: 360px;
+      margin-top: 25px;
+    }
+
+    & .card-item__place {
+      height: 40px;
+      width: 320px;
+      margin-top: 100px;
+
+      & .card-item__value {
+        margin-top: -25px;
+        left: 285px;
+      }
+    }
+
+    & .card-item__revType {
+      width: 330px;
+      margin-top: 190px;
+
+      & .img__type {
+        height: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .card-item {
+
+    & .card-item__bg {
+      max-width: 300px;
+
+      & .img__bg {
+        max-width: 300px;
+      }
+    }
+
+    & .card-item__top {
+
+      & .card-item__chip {
+        margin: 0 170px 0 5px !important;
+
+        & .img__chip {
+          max-height: 25px;
+        }
+      }
+
+      & .img__type {
+        max-height: 25px;
+      }
+    }
+
+    & .card-item__number {
+      top: -15px !important;
+
+      & .card-item__numberItem {
+        font-size: 18px;
+      }
+
+      & .card-item__empty {
+        width: 14px;
+      }
+    }
+
+    & .card-item__infoMain {
+      top: 160px !important;
+
+      & .card-item__info {
+        width: 260px !important;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .card-item__rev {
+
+    & .card-item__revBg {
+      max-width: 300px;
+
+      & .img__bg {
+        max-width: 300px;
+      }
+    }
+
+    & .card-item__check {
+      height: 30px;
+      width: 300px;
+      margin-top: 20px;
+    }
+
+    & .card-item__place {
+      height: 35px;
+      width: 260px;
+      margin-top: 80px;
+
+      & .card-item__value {
+        margin-top: -28px;
+        left: 230px;
+
+        & .card-item__cvv {
+          font-size: 14px;
+          margin-left: 2px;
+        }
+      }
+    }
+
+    & .card-item__revType {
+      width: 270px;
+      margin-top: 145px;
+
+      & .img__type {
+        height: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .card-item {
+
+    & .card-item__bg {
+      max-width: 250px;
+
+      & .img__bg {
+        max-width: 250px;
+        border-radius: 10px;
+      }
+    }
+
+    & .card-item__top {
+      top: 12px;
+
+      & .card-item__chip {
+        margin: 0 145px 0 3px !important;
+
+        & .img__chip {
+          max-height: 22px;
+        }
+      }
+
+      & .img__type {
+        max-height: 22px;
+      }
+    }
+
+    & .card-item__number {
+      top: -30px !important;
+
+      & .card-item__numberItem {
+        font-size: 14px;
+      }
+
+      & .card-item__empty {
+        width: 15px !important;
+      }
+    }
+
+    & .card-item__infoMain {
+      top: 135px !important;
+
+      & .card-item__info {
+        font-size: 11px;
+        width: 220px !important;
+      }
+    }
+  }
+
+  .card-item__rev {
+
+    & .card-item__revBg {
+      max-width: 250px;
+
+      & .img__bg {
+        max-width: 250px;
+        border-radius: 10px;
+      }
+    }
+
+    & .card-item__check {
+      height: 25px;
+      width: 250px;
+      margin-top: 20px;
+    }
+
+    & .card-item__place {
+      height: 30px;
+      width: 210px;
+      margin-top: 60px;
+
+      & .card-item__value {
+        margin-top: -18px;
+        left: 180px;
+        font-size: 14px;
+
+        & .card-item__cvv {
+          font-size: 12px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    & .card-item__revType {
+      width: 220px;
+      margin-top: 120px;
+
+      & .img__type {
+        height: 22px;
+      }
+    }
+  }
+}

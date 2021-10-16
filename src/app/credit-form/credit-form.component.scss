@@ -1,0 +1,53 @@
+.bgc {
+  background-color: white;
+  max-width: 570px;
+  margin: -144px auto 0 auto;
+  padding-top: 175px;
+  border-radius: 10px;
+}
+
+.card-form {
+  max-width: 500px;
+
+  & .card-label__number,
+  .card-label__holder,
+  .card-label__month,
+  .card-label__year,
+  .card-label__cvv {
+    & span {
+      color: red;
+    }
+  }
+
+  & .invalid {
+    & input, select {
+      border-color: red;
+    }
+  }
+
+  & .card-form__valid {
+    color: red;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bgc {
+    margin: -120px auto 0 auto !important;
+    padding-top: 150px !important;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .bgc {
+    margin: -100px auto 0 auto !important;
+    padding-top: 120px !important;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .bgc {
+    margin: -85px auto 0 auto !important;
+    padding-top: 90px !important;
+    font-size: 14px;
+  }
+}
