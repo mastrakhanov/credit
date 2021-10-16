@@ -14,15 +14,13 @@
   </div>
 
   <div class="card-item__number d-flex position-absolute">
-    <ng-container *ngFor="let item of cardNumberItems">
-      <div class="card-item__numberItem">
-        <span *ngIf="cardValue && cardValue.number ? !cardValue.number[item] && item !== -1 : item !== -1">#</span>
+    <div *ngFor="let item of cardNumberItems" class="card-item__numberItem">
+      <span *ngIf="cardValue && cardValue.number ? !cardValue.number[item] && item !== -1 : item !== -1">#</span>
 
-        <span *ngIf="cardValue && cardValue.number">{{ cardValue.number[item] }}</span>
+      <span *ngIf="cardValue && cardValue.number">{{ cardValue.number[item] }}</span>
 
-        <div [class.card-item__empty]="item === -1"></div>
-      </div>
-    </ng-container>
+      <div [class.card-item__empty]="item === -1"></div>
+    </div>
   </div>
 
   <div class="card-item__infoMain position-absolute">
