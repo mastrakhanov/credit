@@ -27,12 +27,19 @@
     <div class="card-item__info d-flex justify-content-between">
 
       <div>
-        <div class="card-item__holder"><span>Card Holder</span></div>
-        <div class="card-item__holderName text-uppercase"><span *ngIf="!cardValue?.holder">FULL NAME</span>{{ cardValue?.holder }}</div>
+        <div class="card-item__holder">
+          <span>Card Holder</span>
+        </div>
+        <div class="card-item__holderName text-uppercase">
+          <span *ngIf="!cardValue?.holder">FULL NAME</span>
+          {{ cardValue?.holder }}
+        </div>
       </div>
 
       <div>
-        <div class="card-item__exp"><span>Expires</span></div>
+        <div class="card-item__exp">
+          <span>Expires</span>
+        </div>
         <div class="card-item__monthYear">
           <span *ngIf="!cardValue?.month">MM</span>
           <span>{{ cardValue?.month }}</span>

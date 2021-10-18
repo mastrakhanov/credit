@@ -21,7 +21,6 @@ export class CreditDirective {
       (event.key === 'x' && event.ctrlKey === true) ||
       // Allow: left, right
       (event.key === 'ArrowLeft') || (event.key === 'ArrowRight')) {
-
       return;
     }
 
