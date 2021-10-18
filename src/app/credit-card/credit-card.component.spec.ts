@@ -68,31 +68,31 @@ describe('CreditCardComponent', () => {
   });
 
   describe('Back side', () => {
-    let component: CreditCardComponent;
-    let fixture: ComponentFixture<CreditCardComponent>;
-    let element: HTMLElement;
+    let component2: CreditCardComponent;
+    let fixture2: ComponentFixture<CreditCardComponent>;
+    let element2: HTMLElement;
 
     beforeEach(() => {
-      fixture = TestBed.createComponent(CreditCardComponent);
-      component = fixture.componentInstance;
-      component.isReversed = true;
-      component.cardValue = cardStub;
-      fixture.detectChanges();
+      fixture2 = TestBed.createComponent(CreditCardComponent);
+      component2 = fixture2.componentInstance;
+      component2.isReversed = true;
+      component2.cardValue = cardStub;
+      fixture2.detectChanges();
     });
 
     it('should contain img', () => {
-      element = fixture.nativeElement;
-      expect(element.innerHTML).toContain('img');
+      element2 = fixture2.nativeElement;
+      expect(element2.innerHTML).toContain('img');
     });
 
     it('should contain "CVV"', () => {
-      element = fixture.nativeElement.querySelector('.card-itemLabel__cvv');
-      expect(element.textContent).toContain('CVV');
+      element2 = fixture2.nativeElement.querySelector('.card-itemLabel__cvv');
+      expect(element2.textContent).toContain('CVV');
     });
 
     it('should contain cardStub cvv', () => {
-      element = fixture.nativeElement.querySelector('.card-item__cvv');
-      expect(element.textContent).toContain(cardStub.cvv);
+      element2 = fixture2.nativeElement.querySelector('.card-item__cvv');
+      expect(element2.textContent).toContain(cardStub.cvv);
     });
   });
 });
